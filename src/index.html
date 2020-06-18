@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>
+      GreenScreen
+    </title>
+  </head>
+  <body>
+    <h1>
+      Upload Images
+    </h1>
+    <label>(same height and width)</label><br /><br /><br />
+    <canvas id="can"></canvas>
+    <canvas id="can2"></canvas>
+    <canvas id="can3"></canvas>
+    <br />
+    <label>Foreground File: </label>
+    <input
+      id="finput"
+      type="file"
+      multiple="false"
+      accept="image/*"
+      onChange="uploadForeground()"
+    /><br />
+    <label>Background File: </label>
+    <input
+      id="binput"
+      type="file"
+      multiple="false"
+      accept="image/*"
+      onChange="uploadBackground()"
+    /><br />
+    <br /><br />
+    <input
+      id="grayscale"
+      type="button"
+      value="Hide"
+      onClick="createComposite()"
+    />
+    <input
+      id="grayscale"
+      type="button"
+      value="Clear Canvas"
+      onClick="clearCanvas()"
+    />
+
+    <!-- Scripts -->
+    <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+  </body>
+</html>

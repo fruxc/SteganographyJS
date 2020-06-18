@@ -1,0 +1,22 @@
+canvas {
+  width: 400px;
+  /*   height:100px; */
+  border: 2px solid #c3c3c3;
+}
+body {
+  background-color: wheat;
+  font-family: Verdana;
+  margin: 40px;
+}
+h1 {
+  font-family: Arial;
+  color: black;
+}
+input {
+  font-size: 12pt;
+  margin: 10px;
+}
+label {
+  font-size: 12pt;
+  margin: 10px;
+}
