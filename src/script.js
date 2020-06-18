@@ -60,6 +60,22 @@ function combine(imageShow, imageHide) {
   return imageShow;
 }
 
+function crop(newImage) {
+  var h = 300;
+  return newImage;
+}
+
+function crop(image, height, width) {
+  var newImage = new SimpleImage(height, width);
+  for (var px of newImage.values()) {
+    var hpx = image.getPixel(px.getX(), px.getY());
+    px.setRed(hpx.getRed());
+    px.setGreen(hpx.getGreen());
+    px.setBlue(hpx.getBlue());
+  }
+  return newImage;
+}
+
 function createComposite() {
   if (fgimage === null || !fgimage.complete) {
     alert("Foreground not loaded");
@@ -71,9 +87,12 @@ function createComposite() {
     doClear(can2);
     return;
   }
-  var output = fgimage;
-  var start = chop2hide(fgimage);
-  var hide = shift(bgimage);
+
+  var start = crop(fgimage, 300, 300);
+  var hide = crop(bgimage, 300, 300);
+  var output = start;
+  start = chop2hide(start);
+  hide = shift(hide);
   output = combine(start, hide);
   output.drawTo(resCanvas);
 }
